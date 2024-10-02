@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>MSME Credit Platform</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to MSME Credit Access Platform</h1>
+        <nav>
+            <ul>
+                <li><a th:href="@{/dashboard}">Dashboard</a></li>
+                <li><a th:href="@{/loan-offers}">Loan Offers</a></li>
+                <li><a th:href="@{/apply-loan}">Apply for Loan</a></li>
+                <li><a th:href="@{/profile}">Profile</a></li>
+                <li><a th:href="@{/logout}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="dashboard">
+            <h2>Dashboard</h2>
+            <div class="info">
+                <p><strong>Credit Score:</strong> <span th:text="${creditScore}"></span></p>
+                <p><strong>Loan Eligibility:</strong> Eligible for loans up to <span th:text="${loanAmount}"></span></p>
+            </div>
+            <div class="loan-status">
+                <h3>Your Loans</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Loan ID</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Repayment Due</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>LN123456</td>
+                            <td>₹100,000</td>
+                            <td>Approved</td>
+                            <td>2024-10-30</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="ai-suggestions">
+                <h3>AI-Driven Financial Suggestions</h3>
+                <p>To improve your credit score, reduce unnecessary expenses and submit regular financial updates.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 MSME Credit Platform</p>
+    </footer>
+</body>
+</html>
