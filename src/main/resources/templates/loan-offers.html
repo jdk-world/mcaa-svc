@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Loan Offers</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>MSME Credit Access Advisor</h1>
+        <nav>
+            <ul>
+                <li><a th:href="@{/dashboard}">Dashboard</a></li>
+                <li><a th:href="@{/loan-offers}" class="active">Loan Offers</a></li>
+                <li><a th:href="@{/apply-loan}">Apply for Loan</a></li>
+                <li><a th:href="@{/profile}">Profile</a></li>
+                <li><a th:href="@{/logout}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="loan-offers-container">
+            <h2>Available Loan Offers</h2>
+
+            <!-- Loan offers container with scroll -->
+            <section class="loan-offers-list">
+                <div class="loan-offer-card" th:each="loan : ${loanOffers}">
+                    <h3 th:text="${loan.bankName}">Bank Name</h3>
+                    <p>Interest Rate: <span th:text="${loan.interestRate}">7.5</span>%</p>
+                    <p>Repayment Period: <span th:text="${loan.repaymentPeriod}">24</span> months</p>
+                    <p>Loan Amount: <span th:text="${loan.amount}">500000</span> INR</p>
+                    <p>Eligibility: <span th:text="${loan.eligibilityCriteria}">Min. Credit Score 700</span></p>
+                    <p>Loan Type: <span th:text="${loan.loanType}">Business Loan</span></p>
+                    <button class="btn" type="button" onclick="applyForLoan(this)" th:data-id="${loan.id}">Apply Now</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Credit Access Platform for MSMEs</p>
+    </footer>
+
+    <!-- JavaScript to handle loan application -->
+    <script>
+        function applyForLoan(button) {
+            const loanId = button.getAttribute("data-id");
+            alert("Loan application submitted for loan ID: " + loanId);
+            // You can add AJAX here to send the application request
+        }
+    </script>
+</body>
+</html>

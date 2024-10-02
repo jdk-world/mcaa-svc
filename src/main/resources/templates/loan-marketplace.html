@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Loan Marketplace</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <header>
+        <h1>Loan Marketplace</h1>
+        <nav>
+            <ul>
+                <li><a th:href="@{/dashboard}">Dashboard</a></li>
+                <li><a th:href="@{/loan-offers}">Loan Offers</a></li>
+                <li><a th:href="@{/apply-loan}">Apply for Loan</a></li>
+                <li><a th:href="@{/profile}">Profile</a></li>
+                <li><a th:href="@{/logout}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="marketplace-container">
+            <h2>Available Loan Offers</h2>
+            <div class="loan-offer" th:each="loan : ${loanOffers}">
+                <h3 th:text="${loan.bankName}"></h3>
+                <p>Interest Rate: <span th:text="${loan.interestRate}"></span>%</p>
+                <p>Repayment Period: <span th:text="${loan.repaymentPeriod}"></span> months</p>
+                <p>Amount: <span th:text="${loan.amount}"></span></p>
+                <button type="button" class="btn" onclick="applyForLoan()">Apply Now</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 MSME Credit Platform</p>
+    </footer>
+</body>
+</html>

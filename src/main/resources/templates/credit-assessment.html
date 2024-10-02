@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Credit Assessment</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <header>
+        <h1>Credit Assessment</h1>
+        <nav>
+            <ul>
+                <li><a th:href="@{/dashboard}">Dashboard</a></li>
+                <li><a th:href="@{/loan-offers}">Loan Offers</a></li>
+                <li><a th:href="@{/apply-loan}">Apply for Loan</a></li>
+                <li><a th:href="@{/profile}">Profile</a></li>
+                <li><a th:href="@{/logout}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="financial-tools-container">
+            <h2>Submit Documents for Credit Assessment</h2>
+            <form action="/credit-assessment" method="post" enctype="multipart/form-data">
+                <label for="bank-statements">Upload Bank Statements:</label>
+                <input type="file" id="bank-statements" name="bankStatements" required>
+
+                <label for="transaction-history">Upload Transaction History:</label>
+                <input type="file" id="transaction-history" name="transactionHistory" required>
+
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 MSME Credit Platform</p>
+    </footer>
+</body>
+</html>

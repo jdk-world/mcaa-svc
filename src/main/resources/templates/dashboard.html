@@ -6,10 +6,10 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to MSME Credit Access Platform</h1>
+        <h1>MSME Credit Access Advisor</h1>
         <nav>
             <ul>
-                <li><a th:href="@{/dashboard}">Dashboard</a></li>
+                <li><a th:href="@{/dashboard}" class="active">Dashboard</a></li>
                 <li><a th:href="@{/loan-offers}">Loan Offers</a></li>
                 <li><a th:href="@{/apply-loan}">Apply for Loan</a></li>
                 <li><a th:href="@{/profile}">Profile</a></li>
@@ -20,11 +20,9 @@
 
     <main>
         <section class="dashboard">
-            <h2>Dashboard</h2>
-            <div class="info">
-                <p><strong>Credit Score:</strong> <span th:text="${creditScore}"></span></p>
-                <p><strong>Loan Eligibility:</strong> Eligible for loans up to <span th:text="${loanAmount}"></span></p>
-            </div>
+            <h2>Welcome, <span th:text="${user.name}">User</span>!</h2>
+            <!--<h3>Dashboard for <span th:text="${msme.name}">Your MSME Name</span></h3>-->
+            
             <div class="loan-status">
                 <h3>Your Loans</h3>
                 <table>
@@ -48,7 +46,11 @@
             </div>
             <div class="ai-suggestions">
                 <h3>AI-Driven Financial Suggestions</h3>
-                <p>To improve your credit score, reduce unnecessary expenses and submit regular financial updates.</p>
+                <p>Enhance your credit score by minimizing unnecessary expenses and regularly updating your financial information.</p>
+                <div class="info">
+                    <p><strong>Credit Score:</strong> 750</p>
+                    <p><strong>Loan Eligibility:</strong> Eligible for loans up to ₹500,000</p>
+                </div>
             </div>
         </section>
     </main>
