@@ -7,7 +7,6 @@ public class EconomicFactorsId implements Serializable {
     private int month;
     private int year;
 
-    // Default constructor
     public EconomicFactorsId() {}
 
     public EconomicFactorsId(int month, int year) {
@@ -15,7 +14,6 @@ public class EconomicFactorsId implements Serializable {
         this.year = year;
     }
 
-    // Getters and setters
     public int getMonth() {
         return month;
     }
@@ -32,7 +30,6 @@ public class EconomicFactorsId implements Serializable {
         this.year = year;
     }
 
-    // Override equals and hashCode
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

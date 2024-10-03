@@ -76,6 +76,5 @@ public class LoanOffer {
 		this.loanType = loanType;
 	}
 
-    // Getters and Setters
-    // (Make sure you have getters like getBankName(), getInterestRate(), etc.)
+    
 }

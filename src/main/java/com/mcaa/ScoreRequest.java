@@ -27,7 +27,6 @@ public class ScoreRequest {
 	@JsonProperty("GlobalParameters")
     private GlobalParameters globalParameters;
 
-    // Getters and Setters
 }
 
  class Inputs {
@@ -178,7 +177,6 @@ public class ScoreRequest {
     @JsonProperty("inquiry_frequency")
     private int inquiryFrequency;
 
-    // Getters and Setters
 }
 
  class GlobalParameters {
@@ -193,5 +191,4 @@ public class ScoreRequest {
 		this.method = method;
 	}
 
-    // Getters and Setters
 }

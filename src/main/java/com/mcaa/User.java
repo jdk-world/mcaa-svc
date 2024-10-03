@@ -4,14 +4,13 @@ public class User {
 	private Long id;
 	private String name;
 	private String password;
-	private String email; // New field for email
-	private String phone; // New field for phone
-	private String organization; // New field for organization
-	private String role; // New field for user role
-	private String profilePictureUrl; // New field for profile picture URL
-	private MSME msme; // Assuming a relationship with MSME
+	private String email; 
+	private String phone; 
+	private String organization; 
+	private String role; 
+	private String profilePictureUrl; 
+	private MSME msme; 
 
-	// Constructors
 	public User(Long id, String name, String password, String email, String phone, String organization, String role,
 			String profilePictureUrl, MSME msme) {
 		this.id = id;
@@ -114,7 +113,6 @@ public class User {
 			this.contactNumber = contactNumber;
 		}
 
-		// Getters and Setters
 		public Long getId() {
 			return id;
 		}
