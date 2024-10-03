@@ -50,4 +50,29 @@ public class HomeController {
         return "financial-tools.html"; // This will look for dashboard.html in src/main/resources/templates
     }
     
+    @GetMapping("/profile")
+    public String profile(Model model) {
+        // Add data to the model if needed (e.g., credit score, loans, etc.)
+        model.addAttribute("creditScore", 750);
+        model.addAttribute("loanAmount", "₹500,000");
+        User user = userService.getSampleUsers().get(0);
+        model.addAttribute("user", user);
+
+
+        return "profile.html"; // This will look for dashboard.html in src/main/resources/templates
+    }
+    
+    @GetMapping("/logout")
+    public String logout(Model model) {
+        // Add data to the model if needed (e.g., credit score, loans, etc.)
+       
+        User user = userService.getSampleUsers().get(0);
+        model.addAttribute("user", user);
+
+
+        return "logout.html"; // This will look for dashboard.html in src/main/resources/templates
+    }
+    
+    
+    
 }

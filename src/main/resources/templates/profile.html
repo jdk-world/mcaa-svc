@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"> <!-- Link to your CSS file -->
+    <style>
+        /* Inline styles for demonstration; consider moving to your CSS file */
+        .profile-picture img {
+            width: 100px; /* Fixed size for profile picture */
+            height: 100px; /* Maintain aspect ratio */
+            border-radius: 50%; /* Circular profile picture */
+            object-fit: cover; /* Crop image to fit */
+            border: 2px solid #007bff; /* Border for better visibility */
+        }
+
+        .btn {
+            background-color: #007bff; /* Button color */
+            color: white; /* Button text color */
+            border: none; /* No border */
+            padding: 10px 20px; /* Padding for button */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            font-size: 16px; /* Font size */
+        }
+
+        .btn:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+
+        .profile-card {
+            display: flex; /* Flex layout for profile picture and details */
+            align-items: center; /* Center items vertically */
+            margin-bottom: 20px; /* Space below profile card */
+            padding: 15px; /* Padding inside profile card */
+            border: 1px solid #ccc; /* Border around profile card */
+            border-radius: 5px; /* Rounded corners for card */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+        }
+
+        .profile-details {
+            margin-left: 15px; /* Space between picture and details */
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 600px) {
+            .profile-card {
+                flex-direction: column; /* Stack items on small screens */
+                align-items: flex-start; /* Align items to the start */
+            }
+
+            .profile-picture {
+                margin-bottom: 10px; /* Space below picture */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MSME Credit Access Advisor</h1>
+        <nav>
+            <ul>
+                <li><a th:href="@{/dashboard}">Dashboard</a></li>
+                <li><a th:href="@{/loan-offers}">Loan Offers</a></li>
+                <li><a th:href="@{/apply-loan}">Apply for Loan</a></li>
+                <li><a th:href="@{/profile}" class="active">Profile</a></li>
+                <li><a th:href="@{/logout}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+	
+    <main>
+        <div class="container">
+            <h1>User Profile</h1>
+            <div class="profile-card">
+                <div class="profile-picture">
+                    <img th:src="@{${user.profilePictureUrl}}" alt="Profile Picture" />
+                </div>
+                <div class="profile-details">
+                    <h2>Personal Information</h2>
+                    <p><strong>Name:</strong> <span th:text="${user.name}">User Name</span></p>
+                    <p><strong>Email:</strong> <span th:text="${user.email}">user@example.com</span></p>
+                    <p><strong>Phone:</strong> <span th:text="${user.phone}">+1234567890</span></p>
+                    <p><strong>Organization:</strong> <span th:text="${user.organization}">Organization Name</span></p>
+                    <p><strong>Role:</strong> <span th:text="${user.role}">User Role</span></p>
+                    <button class="btn">Edit Profile</button>
+                </div>
+            </div>
+            
+            <div class="profile-actions">
+                <h2>Actions</h2>
+                <ul>
+                    <li><a th:href="@{/change-password}">Change Password</a></li>
+                    <li><a th:href="@{/view-loan-applications}">View Loan Applications</a></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 MSME Credit Platform</p>
+    </footer>
+
+    <script th:src="@{/js/scripts.js}"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>

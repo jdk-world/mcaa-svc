@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout - MSME Credit Access Advisor</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"> <!-- Link to your CSS file -->
+    <style>
+        body {
+            display: flex; /* Center the content */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            margin: 0; /* Remove default margin */
+            text-align: center; /* Center text */
+            background-color: #f8f9fa; /* Light background */
+        }
+        h1 {
+            color: #007bff; /* Primary color for heading */
+        }
+        .btn {
+            background-color: #007bff; /* Button color */
+            color: white; /* Button text color */
+            border: none; /* No border */
+            padding: 10px 20px; /* Padding for button */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            font-size: 16px; /* Font size */
+            margin-top: 20px; /* Space above button */
+            text-decoration: none; /* Remove underline from link */
+        }
+        .btn:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Logout</h1>
+    </header>
+
+    <main>
+        <h2>You have been successfully logged out!</h2>
+        <p>Thank you for using the MSME Credit Access Advisor platform.</p>
+        <p><a th:href="@{/}" class="btn">Login Again</a></p>
+        <p><a th:href="@{/dashboard}" class="btn">Back to Dashboard</a></p>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 MSME Credit Platform</p>
+    </footer>
+</body>
+</html>
