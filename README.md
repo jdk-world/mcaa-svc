@@ -53,10 +53,6 @@ The `/predict-score` endpoint is available for predicting credit scores using a 
 ### Endpoint URL
 POST https://mcaa.azurewebsites.net/api/predict-score
 
-curl -X POST https://mcaa.azurewebsites.net/api/predict-score \
--H "Content-Type: application/json" \
--d '{"Inputs":{"data":[{"msme_id":"MSME12345","lender_name":"Bank A","interest_rate":5.5,"loan_amount_offered":100000,"repayment_period":12,"eligibility":"Eligible","loan_amount_requested":150000,"loan_tenure":12,"loan_purpose":"Business Expansion","msme_id_R":"MSME54321","business_name":"ABC Industries","annual_revenue":500000,"cash_flow":20000,"gst_returns":5000,"loan_history":3}]},"GlobalParameters":1}'
-
 ### Payload Example
 ```json
 {
@@ -84,3 +80,8 @@ curl -X POST https://mcaa.azurewebsites.net/api/predict-score \
   "GlobalParameters": 1
 }
 
+
+```bash
+curl -X POST https://mcaa.azurewebsites.net/api/predict-score \
+-H "Content-Type: application/json" \
+-d '{"Inputs":{"data":[{"msme_id":"MSME12345","lender_name":"Bank A","interest_rate":5.5,"loan_amount_offered":100000,"repayment_period":12,"eligibility":"Eligible","loan_amount_requested":150000,"loan_tenure":12,"loan_purpose":"Business Expansion","msme_id_R":"MSME54321","business_name":"ABC Industries","annual_revenue":500000,"cash_flow":20000,"gst_returns":5000,"loan_history":3}]},"GlobalParameters":1}'
