@@ -84,4 +84,5 @@ POST https://mcaa.azurewebsites.net/api/predict-score
     ]
   },
   "GlobalParameters": 1
-}```
+}
+```
